@@ -48,6 +48,22 @@ proponer correcciones, **verificando siempre lo que propone la IA**.
 - [`ACCESSIBILITY.md`](ACCESSIBILITY.md): plantilla de compromiso de accesibilidad para que la completes con tu auditoría
   (basada en el proyecto [ACCESSIBILITY.md](https://mgifford.github.io/ACCESSIBILITY.md/) de Mike Gifford).
 
+## Trabajar con Claude (u otro agente de IA)
+
+El repositorio incluye [`CLAUDE.md`](CLAUDE.md) con instrucciones para agentes: cómo ejecutar el proyecto,
+dónde está cada cosa y cómo deben acompañarte (cambios pequeños, explicación del criterio WCAG de cada
+cambio y recordatorio de que hay que comprobarlo a mano). Claude Code lo lee automáticamente.
+[`AGENTS.md`](AGENTS.md) y [`.github/copilot-instructions.md`](.github/copilot-instructions.md)
+remiten a él para otros agentes y para GitHub Copilot.
+
+Ejemplos de peticiones:
+
+- «Revisa el contraste de color de la cabecera y propón colores que cumplan WCAG 2.2 AA. Explícame las relaciones de contraste.»
+- «Analiza la jerarquía de encabezados de la portada y propón una estructura con landmarks.»
+- «Reescribe con lenguaje claro el primer párrafo del artículo.»
+- «Propón un borrador de texto alternativo para las imágenes de la portada y explica por qué.»
+- «Haz que el formulario de contacto se pueda usar con teclado y lector de pantalla.»
+
 ## Cómo arrancarlo
 
 ### En GitHub Codespaces (sin instalar nada)
