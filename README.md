@@ -23,15 +23,13 @@ proponer correcciones, **verificando siempre lo que propone la IA**.
 
 | # | Checkpoint | Qué revisaremos |
 |---|---|---|
-| 1 | **Color y contraste** | Herramientas de verificación y cómo pedir a Claude que evalúe combinaciones de color. |
+| 1 | **Color y contraste** | Herramientas de verificación y cómo pedirle a Claude que evalúe combinaciones de color. |
 | 2 | **Encabezados y landmarks** | Estructura semántica de la página. |
-| — | *Demo en directo* | Usar Claude para revisar una jerarquía de encabezados y reescribir un fragmento de copy con lenguaje claro. |
 | 3 | **Contenido** | Lenguaje claro, direccionalidad y truncamiento. |
-| 4 | **Imágenes y gráficos** | Alt-text con criterio; Claude como generador de borradores que siempre hay que validar. |
-| 5 | **Interactividad** | Foco visible, orden de foco, botones y controles. |
-| 6 | **Formularios** | Etiquetas claras, instrucciones y errores bien ubicados (página **Contacto**). |
-| 7 | **Layout** | Reflujo, zoom y adaptación a distintas pantallas. |
-| 8 | **Teclado** | Navegación completa sin ratón. |
+| 4 | **Imágenes y gráficos** | Alt-text con criterio; Claude como generador de borradores de alt-text que siempre hay que validar. |
+| 5 | **Interactividad** | Foco visible y orden de foco. |
+| 6 | **Formularios** | Etiquetas claras y errores bien ubicados (página **Contacto**). |
+| 7 y 8 | **Layout y teclado** | Layout, reflujo y navegación con teclado. |
 
 ### Dónde buscar
 
@@ -45,8 +43,9 @@ proponer correcciones, **verificando siempre lo que propone la IA**.
 
 - [`CHECKLIST.md`](CHECKLIST.md): checklist de accesibilidad paso a paso para seguir trabajando después del curso
   (traducción al español del taller [2024-react-alicante](https://github.com/david-workshops/2024-react-alicante)).
-- [`ACCESSIBILITY.md`](ACCESSIBILITY.md): plantilla de compromiso de accesibilidad para que la completes con tu auditoría
-  (basada en el proyecto [ACCESSIBILITY.md](https://mgifford.github.io/ACCESSIBILITY.md/) de Mike Gifford).
+- [`ACCESSIBILITY.md`](ACCESSIBILITY.md): plantilla organizada por checkpoint. En cada clase apuntas la auditoría y las
+  correcciones; al final del bloque, si quieres, completas las secciones finales (inspirada en el proyecto
+  [ACCESSIBILITY.md](https://mgifford.github.io/ACCESSIBILITY.md/) de Mike Gifford).
 
 ## Trabajar con Claude (u otro agente de IA)
 
@@ -115,7 +114,7 @@ src/
 1. Haz un *fork* del repositorio.
 2. Crea una rama por checkpoint (por ejemplo, `checkpoint-1-contraste`).
 3. Corrige, verifica con herramientas **y** con teclado / lector de pantalla.
-4. Documenta en tu `ACCESSIBILITY.md` qué propuso la IA, qué aceptaste y qué tuviste que corregir o descartar.
+4. Apunta en la tabla del checkpoint de tu `ACCESSIBILITY.md` qué propuso la IA, qué aceptaste y qué tuviste que corregir o descartar.
 
 ---
 

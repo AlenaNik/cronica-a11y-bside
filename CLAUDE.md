@@ -68,14 +68,13 @@ sola. Por eso:
 
 ## Los checkpoints del curso
 
-1. Color y contraste
-2. Encabezados y landmarks
+1. Color y contraste: herramientas de verificación y cómo evaluar combinaciones de color
+2. Encabezados y landmarks: estructura semántica de la página
 3. Contenido: lenguaje claro, direccionalidad y truncamiento
-4. Imágenes y gráficos: texto alternativo con criterio
-5. Interactividad: foco visible, orden de foco, botones
-6. Formularios: etiquetas, instrucciones y errores (página Contacto)
-7. Layout: reflujo, zoom y tamaño de los objetivos
-8. Teclado: todo tiene que poder usarse sin ratón
+4. Imágenes y gráficos: alt-text con criterio (la IA propone borradores que siempre hay que validar)
+5. Interactividad: foco visible y orden de foco
+6. Formularios: etiquetas claras y errores bien ubicados (página Contacto)
+7 y 8. Layout, reflujo y navegación con teclado
 
 Las barreras están repartidas por toda la web a propósito. **No hagas una lista completa de todas ellas
 salvo que te la pidan expresamente:** encontrarlas forma parte del ejercicio.
@@ -83,4 +82,6 @@ salvo que te la pidan expresamente:** encontrarlas forma parte del ejercicio.
 ## Materiales de apoyo del repositorio
 
 - `CHECKLIST.md`: checklist paso a paso (nivel A y guía rápida).
-- `ACCESSIBILITY.md`: plantilla que el alumnado completa con su auditoría.
+- `ACCESSIBILITY.md`: plantilla organizada por checkpoint. En cada clase el alumnado apunta ahí
+  hallazgos, correcciones y qué propuso la IA; al final puede completar las secciones finales.
+  Si te piden documentar, rellena la tabla del checkpoint correspondiente.
