@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { asset } from '../data/articles.js'
+import { asset, photo } from '../data/articles.js'
 
 const empty = { nombre: '', apellidos: '', email: '', telefono: '', motivo: '', mensaje: '', dni: '', fecha: '' }
 
@@ -125,7 +125,7 @@ export default function Contact() {
         </div>
 
         <div className="contact-aside">
-          <img src={asset('redaccion')} />
+          <img src={photo('redaccion', 400, 260)} />
           <div className="aside-title">Nuestra redacción</div>
           <div className="aside-text">Calle Ficticia, 123 · 46001 Valencia</div>
           <div className="aside-text">Lunes a viernes, de 9 a 18 h</div>

@@ -22,8 +22,10 @@ npm run preview    # servir la build en http://localhost:4173
   y revisa la página en el navegador.
 - Rutas (enrutado por hash, sin librería): portada `#/`, artículo `#/articulo/<id>`
   (por ejemplo `#/articulo/cumbre-clima`) y formulario `#/contacto`.
-- Las imágenes son ilustraciones SVG locales en `public/img/` (se cargan con el helper `asset()` de
-  `src/data/articles.js`). No dependen de internet.
+- Las fotos de noticias y galería vienen de `picsum.photos` (helper `photo()` en `src/data/articles.js`).
+  Si no cargan en 4 segundos, `src/imageFallback.js` las cambia por la ilustración local del mismo
+  nombre en `public/img/`. Mapas, captcha, retratos, iconos y anuncio son siempre ilustraciones locales
+  (helper `asset()`).
 - Si el entorno tiene Playwright, puedes usarlo para hacer capturas o lanzar axe-core sobre
   `npm run preview`. No lo instales como dependencia del proyecto sin que la persona lo pida.
 

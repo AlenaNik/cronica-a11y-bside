@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { asset } from '../data/articles.js'
+import { photo } from '../data/articles.js'
 
 const promoImages = {
   'España': 'alquiler', 'Internacional': 'cumbre', 'Economía': 'startup', 'Opinión': 'teatro', 'Tecnología': 'startup',
@@ -42,7 +42,7 @@ export default function NavBar() {
             ))}
           </div>
           <div className="mega-col mega-promo">
-            <img src={asset(promoImages[hovered])} />
+            <img src={photo(promoImages[hovered], 280, 160)} />
             <div className="mega-promo-text">Lo más destacado de {hovered} esta semana</div>
           </div>
         </div>

@@ -36,7 +36,7 @@ export default function Home() {
           <div className="section-label">MÁS NOTICIAS</div>
           {topStories.map((s) => (
             <div className="side-story" key={s.id} onClick={() => go(s.id)}>
-              <img src={s.image} alt={s.image.split('/').pop()} />
+              <img src={s.image} alt={s.image.split('/').slice(-3)[0] + '.jpg'} />
               <div className="kicker">{s.kicker}</div>
               <h5 className="side-title truncate-2">{s.title}</h5>
               <div className="side-summary truncate-2">{s.summary}</div>
