@@ -1,4 +1,10 @@
 import { useState } from 'react'
+import { asset } from '../data/articles.js'
+
+const promoImages = {
+  'España': 'alquiler', 'Internacional': 'cumbre', 'Economía': 'startup', 'Opinión': 'teatro', 'Tecnología': 'startup',
+  'Ciencia': 'sequia', 'Cultura': 'museo', 'Deportes': 'futbol', 'Estilo': 'galeria3', 'Juegos': 'juegos',
+}
 
 const sections = {
   'España': ['Política', 'Sociedad', 'Comunidades', 'Tribunales'],
@@ -36,7 +42,7 @@ export default function NavBar() {
             ))}
           </div>
           <div className="mega-col mega-promo">
-            <img src={`https://picsum.photos/seed/${encodeURIComponent(hovered)}/280/160`} />
+            <img src={asset(promoImages[hovered])} />
             <div className="mega-promo-text">Lo más destacado de {hovered} esta semana</div>
           </div>
         </div>

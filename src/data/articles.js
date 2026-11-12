@@ -1,4 +1,5 @@
-const img = (seed, w = 800, h = 533) => `https://picsum.photos/seed/${seed}/${w}/${h}`
+export const asset = (name) => `${import.meta.env.BASE_URL}img/${name}.svg`
+const img = (name) => asset(name)
 
 export const leadStory = {
   id: 'cumbre-clima',
@@ -13,7 +14,7 @@ export const leadStory = {
   ],
   author: 'Por Marta Ibáñez y Jorge Lledó',
   time: 'Actualizado hace 12 min',
-  image: img('cumbre', 1200, 800),
+  image: img('cumbre'),
   credit: 'Foto: Agencia Lumen',
   readTime: '6 MIN DE LECTURA',
 }
@@ -52,26 +53,26 @@ export const topStories = [
 ]
 
 export const moreStories = [
-  { id: 'elecciones-portugal', kicker: 'Internacional', title: 'Portugal vota en unas elecciones anticipadas marcadas por la abstención', image: img('portugal', 400, 267), time: 'Hace 4 h' },
-  { id: 'museo-reapertura', kicker: 'Cultura', title: 'El museo de arte contemporáneo reabre tras tres años de reformas', image: img('museo', 400, 267), time: 'Hace 5 h' },
-  { id: 'liga-futbol', kicker: 'Deportes', title: 'Remontada histórica en el último minuto del derbi', image: img('futbol', 400, 267), time: 'Hace 5 h' },
-  { id: 'startup-ronda', kicker: 'Tecnología', title: 'Una startup española levanta 40 millones para su asistente de voz', image: img('startup', 400, 267), time: 'Hace 6 h' },
-  { id: 'sequia-campo', kicker: 'Clima', title: 'La sequía obliga a los agricultores a cambiar de cultivos', image: img('sequia', 400, 267), time: 'Hace 7 h' },
-  { id: 'teatro-estreno', kicker: 'Cultura', title: 'Un estreno teatral agota entradas en cuestión de horas', image: img('teatro', 400, 267), time: 'Hace 8 h' },
+  { id: 'elecciones-portugal', kicker: 'Internacional', title: 'Portugal vota en unas elecciones anticipadas marcadas por la abstención', image: img('portugal'), time: 'Hace 4 h' },
+  { id: 'museo-reapertura', kicker: 'Cultura', title: 'El museo de arte contemporáneo reabre tras tres años de reformas', image: img('museo'), time: 'Hace 5 h' },
+  { id: 'liga-futbol', kicker: 'Deportes', title: 'Remontada histórica en el último minuto del derbi', image: img('futbol'), time: 'Hace 5 h' },
+  { id: 'startup-ronda', kicker: 'Tecnología', title: 'Una startup española levanta 40 millones para su asistente de voz', image: img('startup'), time: 'Hace 6 h' },
+  { id: 'sequia-campo', kicker: 'Clima', title: 'La sequía obliga a los agricultores a cambiar de cultivos', image: img('sequia'), time: 'Hace 7 h' },
+  { id: 'teatro-estreno', kicker: 'Cultura', title: 'Un estreno teatral agota entradas en cuestión de horas', image: img('teatro'), time: 'Hace 8 h' },
 ]
 
 export const opinion = [
-  { id: 'op-ciudades', author: 'Lucía Ferrer', title: 'Nuestras ciudades no están pensadas para las personas mayores', avatar: img('lucia', 120, 120) },
-  { id: 'op-trabajo', author: 'Andrés Molina', title: 'La semana de cuatro días ya no es una utopía', avatar: img('andres', 120, 120) },
-  { id: 'op-educacion', author: 'Carmen Ruiz', title: '¿De verdad necesitamos más deberes?', avatar: img('carmen', 120, 120) },
-  { id: 'op-tecnologia', author: 'Pablo Serrano', title: 'La inteligencia artificial no va a salvarnos de nosotros mismos', avatar: img('pablo', 120, 120) },
+  { id: 'op-ciudades', author: 'Lucía Ferrer', title: 'Nuestras ciudades no están pensadas para las personas mayores', avatar: img('lucia') },
+  { id: 'op-trabajo', author: 'Andrés Molina', title: 'La semana de cuatro días ya no es una utopía', avatar: img('andres') },
+  { id: 'op-educacion', author: 'Carmen Ruiz', title: '¿De verdad necesitamos más deberes?', avatar: img('carmen') },
+  { id: 'op-tecnologia', author: 'Pablo Serrano', title: 'La inteligencia artificial no va a salvarnos de nosotros mismos', avatar: img('pablo') },
 ]
 
 export const carousel = [
-  { id: 'galeria-1', title: 'Las mejores fotos de la semana', image: img('galeria1', 1000, 560) },
-  { id: 'galeria-2', title: 'Así se vive el otoño en los Pirineos', image: img('galeria2', 1000, 560) },
-  { id: 'galeria-3', title: 'Un viaje por los mercados de Lisboa', image: img('galeria3', 1000, 560) },
-  { id: 'galeria-4', title: 'Retratos de la España vaciada', image: img('galeria4', 1000, 560) },
+  { id: 'galeria-1', title: 'Las mejores fotos de la semana', image: img('galeria1') },
+  { id: 'galeria-2', title: 'Así se vive el otoño en los Pirineos', image: img('galeria2') },
+  { id: 'galeria-3', title: 'Un viaje por los mercados de Lisboa', image: img('galeria3') },
+  { id: 'galeria-4', title: 'Retratos de la España vaciada', image: img('galeria4') },
 ]
 
 export const markets = [

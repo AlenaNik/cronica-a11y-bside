@@ -1,4 +1,4 @@
-import { allArticles, articleBody, leadStory } from '../data/articles.js'
+import { allArticles, articleBody, leadStory, asset } from '../data/articles.js'
 
 export default function Article({ id }) {
   const a = allArticles.find((x) => x.id === id) || leadStory
@@ -28,7 +28,7 @@ export default function Article({ id }) {
         <p>{articleBody[1]}</p>
         <h4>Qué dice el texto</h4>
         <p>{articleBody[2]}</p>
-        <img src="https://picsum.photos/seed/mapa/700/400" className="article-inline" alt="mapa.png" />
+        <img src={asset('mapa')} className="article-inline" alt="mapa.png" />
         <div className="color-legend">
           <span className="sw red" /> <span className="sw green" />
         </div>

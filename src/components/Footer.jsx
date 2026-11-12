@@ -1,3 +1,5 @@
+import { asset } from '../data/articles.js'
+
 const cols = {
   'Noticias': ['Portada', 'España', 'Internacional', 'Economía', 'Ciencia', 'Salud'],
   'Opinión': ['Editoriales', 'Columnistas', 'Cartas', 'Tribunas'],
@@ -21,10 +23,10 @@ export default function Footer() {
         ))}
       </div>
       <div className="footer-social">
-        <a href="https://example.com" target="_blank"><img src="https://picsum.photos/seed/s1/24/24" /></a>
-        <a href="https://example.com" target="_blank"><img src="https://picsum.photos/seed/s2/24/24" /></a>
-        <a href="https://example.com" target="_blank"><img src="https://picsum.photos/seed/s3/24/24" /></a>
-        <a href="https://example.com" target="_blank"><img src="https://picsum.photos/seed/s4/24/24" /></a>
+        <a href="https://example.com" target="_blank"><img src={asset('s1')} /></a>
+        <a href="https://example.com" target="_blank"><img src={asset('s2')} /></a>
+        <a href="https://example.com" target="_blank"><img src={asset('s3')} /></a>
+        <a href="https://example.com" target="_blank"><img src={asset('s4')} /></a>
       </div>
       <div className="footer-bottom">
         © 2026 La Crónica Diaria (medio ficticio) · <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a> · <a href="#">Accesibilidad</a> · Para más información sobre nuestras condiciones <a href="#">haz clic aquí</a>.

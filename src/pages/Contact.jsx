@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { asset } from '../data/articles.js'
 
 const empty = { nombre: '', apellidos: '', email: '', telefono: '', motivo: '', mensaje: '', dni: '', fecha: '' }
 
@@ -106,7 +107,7 @@ export default function Contact() {
           </div>
 
           <div className="captcha">
-            <img src="https://picsum.photos/seed/captcha/180/50?grayscale" />
+            <img src={asset('captcha')} />
             <input className="field small" placeholder="Código" />
             <div className="captcha-refresh">↻</div>
           </div>
@@ -124,11 +125,11 @@ export default function Contact() {
         </div>
 
         <div className="contact-aside">
-          <img src="https://picsum.photos/seed/redaccion/400/260" />
+          <img src={asset('redaccion')} />
           <div className="aside-title">Nuestra redacción</div>
           <div className="aside-text">Calle Ficticia, 123 · 46001 Valencia</div>
           <div className="aside-text">Lunes a viernes, de 9 a 18 h</div>
-          <img src="https://picsum.photos/seed/mapa-redaccion/400/220" className="aside-map" />
+          <img src={asset('mapa-redaccion')} className="aside-map" />
           <div className="aside-text">Para encontrarnos, busca el edificio con la puerta azul a la derecha del mapa.</div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { leadStory, topStories, moreStories, opinion, markets, mostRead } from '../data/articles.js'
+import { leadStory, topStories, moreStories, opinion, markets, mostRead, asset } from '../data/articles.js'
 import Carousel from '../components/Carousel.jsx'
 import EmissionsChart from '../components/EmissionsChart.jsx'
 
@@ -36,7 +36,7 @@ export default function Home() {
           <div className="section-label">MÁS NOTICIAS</div>
           {topStories.map((s) => (
             <div className="side-story" key={s.id} onClick={() => go(s.id)}>
-              <img src={s.image} alt={s.image.split('/').slice(-3)[0] + '.jpg'} />
+              <img src={s.image} alt={s.image.split('/').pop()} />
               <div className="kicker">{s.kicker}</div>
               <h5 className="side-title truncate-2">{s.title}</h5>
               <div className="side-summary truncate-2">{s.summary}</div>
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
 
         <div className="games-promo">
-          <img src="https://picsum.photos/seed/juegos/600/300" />
+          <img src={asset('juegos')} />
           <div className="games-overlay">
             <div className="games-title">Juegos</div>
             <div className="games-text">Crucigrama, sudoku y el reto de palabras diario. Pulsa el botón verde para jugar.</div>
@@ -108,7 +108,7 @@ export default function Home() {
 
         <div className="podcast">
           <div className="block-title">El podcast de la mañana</div>
-          <img src="https://picsum.photos/seed/podcast/360/200" />
+          <img src={asset('podcast')} />
           <div className="podcast-controls">
             <button className="pc-btn"><svg width="14" height="14" viewBox="0 0 14 14"><polygon points="2,1 13,7 2,13" fill="#fff" /></svg></button>
             <div className="pc-progress"><div className="pc-bar" /></div>
@@ -121,7 +121,7 @@ export default function Home() {
 
       <div className="ad-slot">
         <div className="ad-label">PUBLICIDAD</div>
-        <img src="https://picsum.photos/seed/anuncio/970/250" />
+        <img src={asset('anuncio')} />
         <div className="ad-text">¡OFERTA FLASH! -50 % SOLO HOY · Termina en 00:04:59</div>
       </div>
     </div>

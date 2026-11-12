@@ -9,7 +9,7 @@ Proyecto creado para el bloque **«Diseño sin barreras: accesibilidad e inclusi
 del curso de accesibilidad de **[B:side Academy](https://bsideacademy.com/)**, impartido por Alena Nikolaeva.
 
 *La Crónica Diaria* es un medio inventado: los nombres, las noticias, las personas y los datos son ficticios
-y las imágenes son fotografías aleatorias de [Lorem Picsum](https://picsum.photos/).
+y las imágenes son ilustraciones propias guardadas en `public/img/`.
 
 🔗 **Demo:** https://alenanik.github.io/cronica-a11y-bside/ (GitHub Pages)
 

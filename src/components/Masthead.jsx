@@ -1,3 +1,5 @@
+import { asset } from '../data/articles.js'
+
 export default function Masthead() {
   const today = new Date().toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
   return (
@@ -10,7 +12,7 @@ export default function Masthead() {
         La Crónica Diaria
       </div>
       <div className="masthead-side masthead-weather">
-        <img src="https://picsum.photos/seed/sol/40/40" className="weather-icon" />
+        <img src={asset('sol')} className="weather-icon" />
         <span className="weather-temp">18°C</span>
         <span className="weather-range">21° / 12°</span>
       </div>
