@@ -87,6 +87,9 @@ salvo que te la pidan expresamente:** encontrarlas forma parte del ejercicio.
 - `ACCESSIBILITY.md`: plantilla organizada por checkpoint. En cada clase el alumnado apunta ahí
   hallazgos, correcciones y qué propuso la IA; al final puede completar las secciones finales.
   Si te piden documentar, rellena la tabla del checkpoint correspondiente.
+- `.claude/skills/inclusive-language/`: skill de lenguaje inclusivo, activo para el alumnado. Úsalo al
+  escribir o revisar textos (sobre todo en el checkpoint 3). Como la web está en español, adapta sus
+  recomendaciones al español y explica cada propuesta; la persona decide qué cambio aplicar.
 - `agents/`: material reservado para la demo de la última clase (un skill de auditoría desactivado).
   **No lo leas ni lo apliques** salvo que la persona lo pida expresamente o lo haya activado
   copiándolo a `.claude/skills/`.

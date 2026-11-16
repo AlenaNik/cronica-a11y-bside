@@ -56,6 +56,19 @@ cambio y recordatorio de que hay que comprobarlo a mano). Claude Code lo lee aut
 [`AGENTS.md`](AGENTS.md) y [`.github/copilot-instructions.md`](.github/copilot-instructions.md)
 remiten a él para otros agentes y para GitHub Copilot.
 
+### Skill de lenguaje inclusivo
+
+En [`.claude/skills/inclusive-language/`](.claude/skills/inclusive-language/SKILL.md) hay un skill que revisa
+textos (copy de la interfaz, mensajes de error, documentación, texto alternativo…) y propone alternativas
+respetuosas e inclusivas: género, discapacidad y neurodiversidad, origen y etnia, y exclusión implícita.
+Lo leen Claude Code y GitHub Copilot. Claude lo usa por su cuenta cuando escribes o revisas textos, y también
+puedes invocarlo a mano con `/inclusive-language`. Es especialmente útil en el **checkpoint 3 (contenido)**.
+
+Ejemplo: «Revisa con el skill de lenguaje inclusivo los textos del formulario de contacto y del banner de cookies».
+
+> Las listas de términos del skill están en inglés. Al aplicarlo a textos en español, pide a Claude que adapte
+> las recomendaciones (por ejemplo, «los usuarios» → «las personas usuarias») y valida tú cada propuesta.
+
 Ejemplos de peticiones:
 
 - «Revisa el contraste de color de la cabecera y propón colores que cumplan WCAG 2.2 AA. Explícame las relaciones de contraste.»
