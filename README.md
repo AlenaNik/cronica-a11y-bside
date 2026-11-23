@@ -105,12 +105,133 @@ npm install
 npm run dev
 ```
 
-## Herramientas recomendadas
+## Preparación para la sesión 4: GitHub, Copilot y accesibilidad en el código
 
-- [WAVE](https://wave.webaim.org/extension/), [axe DevTools](https://www.deque.com/axe/devtools/) y [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi)
-- [Colour Contrast Checker](https://colourcontrast.cc/) o el [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
-- Un lector de pantalla: VoiceOver (macOS/iOS), NVDA (Windows) o TalkBack (Android)
-- [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/)
+En la sesión 4 comentamos la tarea, vemos GitHub para diseñadores (repositorio, *pull request* y cómo
+leer código sin saber programar), convertimos GitHub Copilot Chat en un asistente experto en
+accesibilidad y hacemos una demo de auditoría de esta web combinando herramientas y Copilot.
+Trae lo siguiente preparado:
+
+### Extensiones de Chrome imprescindibles
+
+- [ ] [WAVE](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh)
+- [ ] [HeadingsMap](https://chromewebstore.google.com/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi)
+- [ ] [axe DevTools](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd)
+
+### Extensiones y herramientas opcionales
+
+- [ ] [Accessibility Checker de IBM](https://chromewebstore.google.com/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp)
+- [ ] [Web Developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm)
+- [ ] [VisBug](https://chromewebstore.google.com/detail/visbug/cdockenadnadldjbbgcallicgledbeoc)
+- [ ] [taba11y](https://chromewebstore.google.com/detail/taba11y/aocppmckdocdjkphmofnklcjhdidgmga)
+- [ ] Un lector de pantalla: VoiceOver (macOS/iOS), NVDA (Windows) o TalkBack (Android)
+
+### Conocimientos previos (lo justo)
+
+- [ ] Nociones básicas de [React](https://es.react.dev/): la web está hecha con componentes de React.
+- [ ] Échale un vistazo a [Storybook](https://storybook.js.org/): lo usaremos para ver componentes aislados.
+- [ ] Si te interesan los tests automáticos, mira cómo [integrar axe con Cypress](https://github.com/component-driven/cypress-axe).
+- [ ] Ten a mano la [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/).
+
+### Herramienta para corregir el contraste
+
+Usaremos [Colour Contrast Checker](https://colourcontrast.cc/?background=ffffff&foreground=33a1cc)
+para comprobar y corregir combinaciones de color. Tenla abierta en una pestaña. Como alternativa, el
+[WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+### Prompt base para convertir Copilot Chat en asistente de accesibilidad
+
+Pega este prompt al empezar cada conversación en GitHub Copilot Chat (o en Claude, ChatGPT u otro
+cliente de IA). Además, Copilot lee automáticamente
+[`.github/copilot-instructions.md`](.github/copilot-instructions.md), que remite a [`CLAUDE.md`](CLAUDE.md).
+
+```text
+Necesito aprender sobre accesibilidad y escribir código que cumpla los criterios de conformidad
+de nivel A y AA de las WCAG 2.2 definidos en https://www.w3.org/TR/WCAG22/. Quiero que seas mi
+coach de accesibilidad, una persona experta en la materia que me haga pensar y tener en cuenta
+todos los requisitos de accesibilidad y las mejoras de usabilidad. Cuando respondas preguntas sobre
+accesibilidad, utiliza fuentes de prestigio como w3.org, webaim.org, developer.mozilla.org y
+https://www.ibm.com/able/. Siempre que sea posible, incluye enlaces y referencias para seguir
+aprendiendo. Cuando sugieras código, utiliza HTML semántico, asegúrate de que se pueda manejar con
+el teclado, sigue las técnicas suficientes de las WCAG 2.2 y sigue la guía de prácticas de autoría
+de ARIA (ARIA Authoring Practices Guide) y sus patrones de diseño. ¿Entiendes estas instrucciones?
+```
+
+Buenas prácticas al pedirle cosas:
+
+- **Una barrera por petición.** Adjunta el archivo (`#file` en Copilot), selecciona el código o pega
+  el mensaje de axe/WAVE.
+- **Pide criterio y datos:** el criterio WCAG con número, nombre y enlace; la relación de contraste
+  antes y después; la jerarquía de encabezados resultante.
+- **HTML nativo antes que ARIA.** Desconfía si la propuesta añade `role` o `aria-*` a un `<div>`.
+- **Verifica siempre a mano.** Una herramienta automática o la IA nunca bastan para decir que algo
+  «cumple WCAG».
+
+## Checklist: determina el estado de accesibilidad de la página
+
+Sigue estos pasos en orden sobre la [demo](https://alenanik.github.io/cronica-a11y-bside/) o en
+`http://localhost:5173`. Apunta lo que encuentres en [`ACCESSIBILITY.md`](ACCESSIBILITY.md).
+
+1. **Abre la web.**
+2. **Mide cómo de grave es la situación** con un comprobador automático:
+   [webaccessibility.com](https://www.webaccessibility.com/),
+   [WAVE](https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) o
+   [axe](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd).
+3. **Abre la extensión** [Web Developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=es).
+4. **Desactiva todos los estilos** (Web Developer → CSS → *Disable All Styles*):
+   - [ ] ¿La web funciona sin CSS (por si no carga)?
+   - [ ] ¿El orden de los elementos de la página tiene sentido?
+   - [ ] ¿Las imágenes y los iconos tienen un tamaño correcto?
+   - [ ] ¿El documento está bien estructurado?
+5. **Renderizado (visión borrosa, contraste)** con Chrome DevTools: abre DevTools, pulsa
+   `Ctrl/Cmd + Shift + P`, escribe *Show Rendering* y prueba *Emulate vision deficiencies*
+   (visión borrosa, contraste reducido, daltonismos).
+   - [ ] Los enlaces se distinguen del texto normal (por ejemplo, con subrayado), no solo por el color.
+   - [ ] En el mismo panel, activa *Emulate CSS media feature prefers-reduced-motion*: las animaciones,
+     el zoom y los desplazamientos pueden ser un problema para personas con trastornos vestibulares.
+6. **Usa la tecla `Tab`** ➡️ aparta el ratón y recorre toda la página con el teclado
+   (`Tab`, `Shift + Tab`, `Enter`, `Espacio`, `Esc` y flechas). ¿Puedes usar cada parte de la web sin
+   ratón ni trackpad?
+   - [ ] ¿Los estilos de foco se ven claramente?
+   - [ ] ¿Puedes navegar entre encabezados (con un lector de pantalla o HeadingsMap)?
+   - [ ] ¿Todo lo que debería recibir el foco lo recibe?
+   - [ ] ¿Los botones son `<button>` de verdad?
+   - [ ] ¿La experiencia general con teclado es buena?
+   - [ ] ¿Se gestiona bien el foco (pop-ups, banner de cookies, menús)?
+   - [ ] ¿Los elementos se ocultan y se muestran correctamente?
+   - [ ] ¿El orden visual coincide con el orden del DOM? (la extensión taba11y te ayuda a verlo)
+   - [ ] Activa WAVE y axe y revisa las etiquetas ARIA y el resto de avisos.
+   - [ ] Haz zoom al 200 % (`Ctrl/Cmd + +`): ¿el texto escala bien y no se corta ni se solapa?
+7. **Revisa los encabezados con HeadingsMap:** un solo `<h1>`, sin saltos de nivel y con textos que
+   describan cada sección.
+8. **Revisa las descripciones de las imágenes** con
+   [Web Developer](https://chromewebstore.google.com/detail/web-developer/bfbameneiokkgbdmiekhjnmfkcnldhhm?hl=es)
+   (Images → *Display Alt Attributes*): ¿cada `alt` comunica lo mismo que la imagen? ¿Las decorativas
+   tienen `alt=""`?
+9. **Comprueba el contraste de color** de los elementos con
+   [VisBug](https://chromewebstore.google.com/detail/visbug/cdockenadnadldjbbgcallicgledbeoc?hl=en).
+   Sigue la comprobación manual de abajo.
+
+### Comprobación manual del contraste paso a paso
+
+1. Activa VisBug y elige la herramienta de **accesibilidad**. Al pasar el ratón
+   por un texto verás su color, el color de fondo y la relación de contraste. También puedes usar el
+   selector de color de Chrome DevTools (pestaña *Elements* → *Styles* → clic en el cuadro de color).
+2. Copia el color del texto y el del fondo en formato hexadecimal.
+3. Pégalos en [Colour Contrast Checker](https://colourcontrast.cc/?background=ffffff&foreground=33a1cc)
+   (campos *Background* y *Foreground*).
+4. Compara el resultado con el mínimo de las WCAG 2.2 (nivel AA):
+   - **4,5:1** para texto normal ([1.4.3 Contraste mínimo](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)).
+   - **3:1** para texto grande: 24 px o más, o 18,66 px o más en negrita.
+   - **3:1** para iconos, bordes de campos y estados de foco
+     ([1.4.11 Contraste no textual](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)).
+5. Si no llega, ajusta el color en la herramienta hasta que pase, intentando mantener el tono de la marca.
+6. Pide a Copilot que aplique el nuevo color en `src/styles.css`, por ejemplo:
+   «Cambia el color de este texto por `#xxxxxx`. Dime la relación de contraste antes y después
+   y qué criterio WCAG resuelve».
+7. Vuelve a medir con VisBug o WAVE para confirmar el cambio y apúntalo en `ACCESSIBILITY.md`.
+
+Para seguir trabajando después del curso tienes el checklist completo en [`CHECKLIST.md`](CHECKLIST.md).
 
 ## Estructura del código
 
